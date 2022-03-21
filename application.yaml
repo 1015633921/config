@@ -1,5 +1,5 @@
 logging:
-  leverl: INFO
+  leverl: DEBUG
 
 
 ## 指定环境配置
