@@ -1,0 +1,15 @@
+
+debug=true
+logging.level.root=info
+  # 日志目录
+logging.file.path=log/test
+  
+  # 测试数据库
+  # 公网
+spring.datasource.url=jdbc:mysql://rm-wz90fx7092498yl0yqo.mysql.rds.aliyuncs.com:3306/test_wander
+  # Redis服务器地址
+spring.redis.host=r-wz9kptcopoihe5n47npd.redis.rds.aliyuncs.com
+  
+  # es索引名前缀
+es.index.prefix =test_
+

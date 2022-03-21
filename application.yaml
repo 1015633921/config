@@ -1,5 +1,78 @@
-data:
-  env: config-eureka-dev
-  user:
-    username: eureka-client-user
-    password: 1291029102
+# 指定环境配置
+#spring.profiles.active=local-test
+#spring.profiles.active=local-docker-test
+# 服务器测试环境，开发测试的时候用
+spring.profiles.active=remote-test
+  # 服务器正式环境，上线用
+  #spring.profiles.active=remote-product
+  
+  # springboot 日志level，其他的日志配置见 logback-spring.xml 文件
+logging.level.root=info
+  
+  # 对外端口
+server.port=8339
+  # 统一时区
+spring.jackson.time-zone=GMT+8
+
+spring.main.banner-mode=off
+  # MySQL 数据库
+spring.datasource.driver-class- =com.mysql.cj.jdbc.Driver
+spring.datasource.initialization-mode=always
+spring.datasource.platform=mysql
+  
+  # 账号密码
+spring.datasource.username=linlongxin
+spring.datasource.password=wander666
+  # Spring Boot 默认选择 Tomcat JDBC Pool 作为数据库连接池
+spring.datasource.tomcat.max-active=200
+spring.datasource.tomcat.max-idle=100
+spring.datasource.tomcat.min-idle=20
+spring.datasource.tomcat.initial-size=10
+spring.datasource.tomcat.max-wait=10000
+  
+  # Spring Boot 如果发现 Tomcat 连接池不可用，则尝试选择 HikariCP 作为默认连接池
+spring.datasource.hikari.maximum-pool-size=100
+  
+  # hibernate 配置
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+  
+  
+  # mybatis 配置
+mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+  ################ Redis 基础配置 ##############
+  # Redis数据库索引（默认为0）
+spring.redis.database=0
+  # Redis服务器连接端口
+spring.redis.port=6379
+  # Redis服务器连接密码（默认为空）
+spring.redis.password=Wander666
+  # 链接超时时间 单位 ms（毫秒）
+spring.redis.timeout=3000
+  ################ Redis 线程池设置 ##############
+  # 连接池最大连接数（使用负值表示没有限制） 默认 8
+spring.redis.lettuce.pool.max-active=8
+  # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+spring.redis.lettuce.pool.max-wait=-1
+  # 连接池中的最大空闲连接 默认 8
+spring.redis.lettuce.pool.max-idle=8
+  # 连接池中的最小空闲连接 默认 0
+spring.redis.lettuce.pool.min-idle=0
+  
+  # bugfix：https://www.cnblogs.com/cat520/p/13062345.html
+spring.mvc.hiddenmethod.filter.enabled=true
+  
+  ##es配置
+logging.level.org.springframework.data.elasticsearch.client.WIRE=trace
+spring.elasticsearch.rest.uris=es-cn-8ed2jjb6c001xw0jw.public.elasticsearch.aliyuncs.com:9200
+spring.elasticsearch.rest.username=elastic
+spring.elasticsearch.rest.password=Wander666#@!
+  
+  # 跨域白名单
+cors.allowed-origins=http://www.soutushenqi.com, https://www.soutushenqi.com, http://soutushenqi.com, https://soutushenqi.com, \
+http://www.soutushenqi.cn, https://www.soutushenqi.cn, http://soutushenqi.cn, https://soutushenqi.cn, http://test666.soutushenqi.com, https://test666.soutushenqi.com, \
+http://test666op.soutushenqi.com, https://test666op.soutushenqi.com, http://op.soutushenqi.com, https://op.so utushenqi.com, \
+http://test666pc.soutushenqi.com, https://test666pc.soutushenqi.com, http://pc.soutushenqi.com, https://pc.soutushenqi.com, \
+http://localhost:8000, http://localhost:8001, \
+https://runapi_client.showdoc.cc, http://test666.jianzhuxuezhang.com, http://test666op.jianzhuxuezhang.com, \
+http://op.jianzhuxuezhang.com,
